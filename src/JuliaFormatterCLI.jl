@@ -35,3 +35,4 @@ A CLI for JuliaFormatter.
 @main
 
 end # module
+
