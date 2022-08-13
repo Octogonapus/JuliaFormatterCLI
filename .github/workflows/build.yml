@@ -29,6 +29,7 @@ jobs:
         with:
           version: "1.6"
 
+      # FIXME: we need to build our dependencies, but we don't want to build this project here because it gets built next. can we avoid the duplicate work?
       - name: Build dependencies
         uses: julia-actions/julia-buildpkg@v1
 
