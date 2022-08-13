@@ -1,0 +1,19 @@
+name: VersionVigilante
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - ".github/**"
+      - "README.md"
+      - "dev/**"
+
+jobs:
+  VersionVigilante:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+    - uses: Octogonapus/VersionVigilanteAction@main
