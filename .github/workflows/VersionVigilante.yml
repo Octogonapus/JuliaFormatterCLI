@@ -16,4 +16,4 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-    - uses: Octogonapus/VersionVigilanteAction@main
+      - uses: Octogonapus/VersionVigilanteAction@main
