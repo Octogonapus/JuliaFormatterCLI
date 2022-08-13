@@ -29,14 +29,16 @@ jobs:
         with:
           version: "1.6"
 
-      # FIXME: we need to build our dependencies, but we don't want to build this project here because it gets built next. can we avoid the duplicate work?
-      # - name: Build dependencies
-      #   uses: julia-actions/julia-buildpkg@v1
-      
       - run: julia --project -e 'import Pkg; Pkg.instantiate()'
 
       - name: Build tarballs
         run: julia -t auto --project deps/build.jl tarball
+      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: julia-format-${{ matrix.os }}
+          path: build/julia-format
 
       - name: Run tests
         uses: julia-actions/julia-runtest@v1
