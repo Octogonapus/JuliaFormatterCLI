@@ -29,6 +29,9 @@ jobs:
         with:
           version: "1.6"
 
+      - name: Build dependencies
+        uses: julia-actions/julia-buildpkg@v1
+
       - name: Build tarballs
         run: julia -t auto --project deps/build.jl tarball
 
