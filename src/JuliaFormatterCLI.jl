@@ -24,7 +24,9 @@ Format the given files.
         verbose=verbose,
         format_markdown=markdown
     )
-    !already_formatted && error ? cmd_exit(1) : cmd_exit(0)
+    if !already_formatted && error
+        cmd_exit(1)
+    end
 end
 
 """
