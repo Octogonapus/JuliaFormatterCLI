@@ -1,0 +1,2 @@
+import JuliaFormatterCLI
+JuliaFormatterCLI.comonicon_install()

@@ -1,0 +1,11 @@
+name = "JuliaFormatterCLI"
+uuid = "36241fc3-ff18-4850-b708-dc03964a56a1"
+version = "0.1.0"
+
+[deps]
+ArgParse = "c7e460c6-2fb9-53a9-8c5b-16f535851c63"
+Comonicon = "863f3e99-da2a-4334-8734-de3dacbe5542"
+JuliaFormatter = "98e50ef6-434e-11e9-1051-2b60c6c9e899"
+
+[compat]
+julia = "1.6"

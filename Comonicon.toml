@@ -1,0 +1,22 @@
+name = "JuliaFormatterCLI"
+
+[install]
+completion = true
+quiet = false
+optimize = 2
+
+[sysimg]
+incremental = false
+filter_stdlibs = false
+cpu_target = "generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1)"
+
+[sysimg.precompile]
+execution_file = ["deps/precompile.jl"]
+
+[application]
+incremental = false
+filter_stdlibs = false
+cpu_target = "generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1)"
+
+[application.precompile]
+execution_file = ["deps/precompile.jl"]
