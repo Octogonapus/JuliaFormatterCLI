@@ -4,34 +4,31 @@ using Comonicon
 import JuliaFormatter
 
 """
-sum two numbers.
+Format the given files.
 
 # Args
 
-- `x`: first number
-- `y`: second number
-
-# Options
-
-- `-p, --precision=<type>`: precision of the calculation.
+- `paths`: a path or paths to format
 
 # Flags
 
-- `-f, --fastmath`: enable fastmath.
+- `--markdown`: format Markdown files.
+- `--error`: return a nonzero exit code if the paths were not already formatted.
+- `-v, --verbose`: verbose mode.
 
 """
-@cast function format(paths; format_markdown=false, no_overwrite=false, no_error=false, verbose=false)
+@cast function format(paths...; markdown::Bool=false, error::Bool=false, verbose::Bool=false)
     already_formatted = JuliaFormatter.format(
         paths;
-        overwrite=!no_overwrite,
+        overwrite=true,
         verbose=verbose,
-        format_markdown=format_markdown
+        format_markdown=markdown
     )
-    return already_formatted || no_error
+    !already_formatted && error ? cmd_exit(1) : cmd_exit(0)
 end
 
 """
-my demo Comonicon CLI project.
+A CLI for JuliaFormatter.
 """
 @main
 

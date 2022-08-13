@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ["ubuntu-22.04", "windows-2022", "macos-12"]
+        os: ["ubuntu-22.04", "macos-12"] # comonicon doesn't support windows
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     permissions:
@@ -35,6 +35,5 @@ jobs:
       - name: Build tarballs
         run: julia -t auto --project deps/build.jl tarball
 
-      - run: ls -l deps/
-      - run: ls -l build/
-      - run: ls -l build/JuliaFormatterCLI/
+      - name: Run tests
+        uses: julia-actions/julia-runtest@v1

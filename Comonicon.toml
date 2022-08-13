@@ -1,4 +1,4 @@
-name = "JuliaFormatterCLI"
+name = "julia-format"
 
 [install]
 completion = true
