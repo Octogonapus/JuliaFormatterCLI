@@ -33,12 +33,12 @@ jobs:
 
       - name: Build tarballs
         run: julia -t auto --project deps/build.jl tarball
-      
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v1
         with:
           name: julia-format-${{ matrix.os }}
-          path: build/julia-format
+          path: build/julia-format/bin/julia-format
 
       - name: Run tests
         uses: julia-actions/julia-runtest@v1

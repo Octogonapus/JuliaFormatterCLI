@@ -25,7 +25,7 @@ Format the given files.
         format_markdown=markdown
     )
     if !already_formatted && error
-        cmd_exit(1)
+        exit(1)
     end
 end
 
