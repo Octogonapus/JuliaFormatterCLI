@@ -1,6 +1,7 @@
 name: VersionVigilante
 
 on:
+  push:
   pull_request:
     branches:
       - main
