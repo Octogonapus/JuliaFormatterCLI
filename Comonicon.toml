@@ -6,7 +6,7 @@ quiet = false
 optimize = 2
 
 [sysimg]
-incremental = false
+incremental = true
 filter_stdlibs = false
 cpu_target = "generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1)"
 
@@ -14,7 +14,7 @@ cpu_target = "generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1)"
 execution_file = ["deps/precompile.jl"]
 
 [application]
-incremental = false
+incremental = true
 filter_stdlibs = false
 cpu_target = "generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1)"
 
