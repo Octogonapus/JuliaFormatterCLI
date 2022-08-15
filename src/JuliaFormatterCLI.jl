@@ -17,7 +17,7 @@ Format the given files.
 - `-v, --verbose`: verbose mode.
 
 """
-@main function main(paths...; markdown::Bool=false, error::Bool=false, verbose::Bool=false)
+@main function format(paths...; markdown::Bool=false, error::Bool=false, verbose::Bool=false)
     already_formatted = JuliaFormatter.format(
         paths;
         overwrite=true,
