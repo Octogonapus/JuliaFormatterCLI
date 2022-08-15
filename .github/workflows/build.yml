@@ -41,12 +41,13 @@ jobs:
         run: julia -t auto --project deps/build.jl app tarball
 
       - run: ls -l
+      - run: ls -l julia-format-*.tar.gz
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v1
         with:
           name: julia-format
-          path: ./julia-format-*.tar.gz
+          path: '**/julia-format-*.tar.gz'
 
       - name: Run tests
         uses: julia-actions/julia-runtest@v1
@@ -55,4 +56,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: ./julia-format-*.tar.gz
+          path: '**/julia-format-*.tar.gz'
