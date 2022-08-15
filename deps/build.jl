@@ -2,7 +2,7 @@ import JuliaFormatterCLI, Downloads, Tar, CodecZlib
 
 const bundle_tar_path = joinpath(@__DIR__, "file-bundle.zip")
 const bundle_path = joinpath(@__DIR__, "file-bundle")
-rm(bundle_path; force=true, recursive=true)
+rm(bundle_path; force = true, recursive = true)
 mkpath(bundle_path)
 
 Downloads.download(
